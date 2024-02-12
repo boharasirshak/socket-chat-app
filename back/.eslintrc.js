@@ -1,9 +1,14 @@
 module.exports = {
+  "parser": "@typescript-eslint/parser",
   "env": {
     "node": true,
     "es2021": true
   },
-  "extends": "eslint:recommended",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended", 
+    "plugin:@typescript-eslint/recommended"
+  ],
   "overrides": [
     {
       "env": {
@@ -28,8 +33,7 @@ module.exports = {
     ],
     "linebreak-style": [
       "error",
-      "unix",
-      "windows"
+      "unix"
     ],
     "quotes": [
       "error",
