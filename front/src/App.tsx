@@ -4,15 +4,14 @@ import { io } from "socket.io-client";
 import "./App.css";
 
 const App: React.FC = () => {
-  const wsUrl = import.meta.env.WS_BACKEND_URL;
-
   useEffect(() => {
-    const socket = io(wsUrl);
+    const socket = io(import.meta.env.VITE_WS_BACKEND_URL);
+
     socket.on("connect", () => {
       console.log("Connection made");
     });
 
-  }, [wsUrl]);
+  }, []);
 
   return (
     <>
